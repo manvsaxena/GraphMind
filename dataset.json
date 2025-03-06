@@ -1,0 +1,26 @@
+{
+  "nodes": [
+      { "id": "1", "name": "Alice Johnson", "role": "Research Scientist" },
+      { "id": "2", "name": "Bob Smith", "role": "AI Engineer" },
+      { "id": "3", "name": "Charlie Lee", "role": "Machine Learning Expert" },
+      { "id": "4", "name": "David Kim", "role": "NLP Specialist" },
+      { "id": "5", "name": "Eve Martinez", "role": "Computer Vision Engineer" },
+      { "id": "6", "name": "Frank Gupta", "role": "Deep Learning Researcher" },
+      { "id": "7", "name": "Grace Li", "role": "Data Scientist" },
+      { "id": "8", "name": "Hank Patel", "role": "AI Product Manager" }
+  ],
+  "edges": [
+      { "source": "1", "target": "2", "collaboration": "Published Paper" },
+      { "source": "2", "target": "3", "collaboration": "Worked on AI Project" },
+      { "source": "3", "target": "4", "collaboration": "Conference Talk" },
+      { "source": "4", "target": "5", "collaboration": "Co-authored Paper" },
+      { "source": "5", "target": "6", "collaboration": "Developed AI Model" },
+      { "source": "6", "target": "7", "collaboration": "Data Analysis Project" },
+      { "source": "7", "target": "8", "collaboration": "AI Strategy Planning" },
+      { "source": "8", "target": "1", "collaboration": "Industry Research" },
+      { "source": "1", "target": "3", "collaboration": "Mentorship" },
+      { "source": "2", "target": "5", "collaboration": "Joint Research" },
+      { "source": "4", "target": "6", "collaboration": "AI Framework Development" },
+      { "source": "7", "target": "2", "collaboration": "Startup Collaboration" }
+  ]
+}

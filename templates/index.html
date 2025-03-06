@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GraphMind - Upload JSON</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">GraphMind - AI-Driven Graph Reasoning</h1>
+        <p class="subtitle">Upload a JSON dataset to generate the graph.</p>
+
+        <div class="upload-box">
+            <input type="file" id="jsonFile" />
+            <button onclick="uploadGraph()">Upload & Generate Graph</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function uploadGraph() {
+            let fileInput = document.getElementById("jsonFile").files[0];
+            if (!fileInput) {
+                alert("Please select a JSON file first!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput);
+
+            fetch("/upload", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                } else {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                if (data && data.error) {
+                    document.getElementById("message").innerText = "Error: " + data.error;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
